@@ -1,0 +1,29 @@
+{
+  "name": "react-pwa-app",
+  "version": "1.0.0",
+  "description": "A Progressive Web App built with React, Vite, and Tailwind CSS.",
+  "main": "src/main.jsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [
+    "react",
+    "pwa",
+    "vite",
+    "tailwindcss"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "vite": "^2.6.4",
+    "postcss": "^8.3.6",
+    "autoprefixer": "^10.3.7"
+  }
+}
