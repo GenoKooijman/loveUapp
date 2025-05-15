@@ -1,8 +1,0 @@
-User's request for the contents of the file: /react-pwa-app/react-pwa-app/public/robots.txt
-
-User's project tree structure indicates that the file should be created as part of a React PWA project.
-
-Here are the contents for the robots.txt file:
-
-User-agent: *
-Disallow: /
