@@ -9,7 +9,7 @@
   --color-info: #E3B505;        /* Saffron - info/warnings */
 } 
 
-@keyframes modal-pop {
+@keyframes modal-in {
   0% {
     opacity: 0;
     transform: translateY(40px) scale(0.95);
@@ -19,6 +19,6 @@
     transform: translateY(0) scale(1);
   }
 }
-.animate-modal-pop {
-  animation: modal-pop 0.3s cubic-bezier(0.4,0,0.2,1);
+.animate-modal-in {
+  animation: modal-in 0.3s cubic-bezier(0.4,0,0.2,1);
 }
