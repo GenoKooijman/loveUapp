@@ -1,2 +1,24 @@
 @import "tailwindcss"; 
 @custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-accent: #F03228;      /* Vermilion - buttons, interactive */
+  --color-base: #FFFFFF;        /* White - backgrounds, text (light/dark mode) */
+  --color-primary: #000000;     /* Black - text/background (light/dark mode) */
+  --color-secondary: #247BA0;   /* Cerulean - headings */
+  --color-info: #E3B505;        /* Saffron - info/warnings */
+} 
+
+@keyframes modal-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-modal-pop {
+  animation: modal-pop 0.3s cubic-bezier(0.4,0,0.2,1);
+}

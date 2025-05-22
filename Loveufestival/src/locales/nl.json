@@ -1,0 +1,26 @@
+{
+  "section": {
+    "title": "Sectietitel",
+    "info": "Dit is wat informatie over deze sectie."
+  },
+  "profile": {
+    "title": "Profiel",
+    "info": "Beheer hier je persoonlijke informatie."
+  },
+  "settings": {
+    "title": "Instellingen",
+    "info": "Pas je voorkeuren en configuraties aan."
+  },
+  "notifications": {
+    "title": "Meldingen",
+    "info": "Bekijk je recente meldingen en waarschuwingen."
+  },
+  "help": {
+    "title": "Help",
+    "info": "Vind antwoorden op veelgestelde vragen."
+  },
+  "about": {
+    "title": "Over",
+    "info": "Lees meer over deze applicatie."
+  }
+}

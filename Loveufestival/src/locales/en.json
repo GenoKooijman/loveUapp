@@ -1,0 +1,26 @@
+{
+  "": {
+    "title": "Section Title",
+    "info": "This is some information about this section."
+  },
+  "profile": {
+    "title": "Profile",
+    "info": "Manage your personal information here."
+  },
+  "settings": {
+    "title": "Settings",
+    "info": "Adjust your preferences and configurations."
+  },
+  "notifications": {
+    "title": "Notifications",
+    "info": "View your recent notifications and alerts."
+  },
+  "help": {
+    "title": "Help",
+    "info": "Find answers to common questions."
+  },
+  "about": {
+    "title": "About",
+    "info": "Learn more about this application."
+  }
+}
