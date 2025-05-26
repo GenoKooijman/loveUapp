@@ -20,7 +20,7 @@ const createIcon = (iconUrl) =>
   new L.Icon({
     iconUrl,
     iconSize: [16, 32],
-    iconAnchor: [16, 32],
+    iconAnchor: [8, 16],
     popupAnchor: [0, -32],
     className: "",
   });
@@ -91,20 +91,31 @@ function MarkerModal({ marker, onClose }) {
 export default function MapView() {
   const [openMarker, setOpenMarker] = useState(null);
 
-  // Example real-world coordinates (replace with your actual locations)
   const markers = [
-    { id: "bar", img: markerBar, alt: "Bar", pos: [-0.2202, -78.5127] },
-    { id: "stage1", img: markerStage1, alt: "Stage 1", pos: [-0.2205, -78.5130] },
-    { id: "stage2", img: markerStage2, alt: "Stage 2", pos: [-0.2208, -78.5132] },
-    { id: "stage3", img: markerStage3, alt: "Stage 3", pos: [-0.2210, -78.5135] },
-    { id: "stage4", img: markerStage4, alt: "Stage 4", pos: [-0.2212, -78.5138] },
+    { id: "bar", img: markerBar, alt: "Bar", pos: [-0.22098, -78.51408] },
+    { id: "bar2", img: markerBar, alt: "Bar", pos: [-0.22032, -78.5127] },
+    { id: "bar3", img: markerBar, alt: "Bar", pos: [-0.220117, -78.5120] },
+    { id: "bar4", img: markerBar, alt: "Bar", pos: [-0.22005, -78.5117] },
+    { id: "stage1", img: markerStage1, alt: "Stage 1", pos: [-0.2207, -78.5137] },
+    { id: "stage2", img: markerStage2, alt: "Stage 2", pos: [-0.22042, -78.51265] },
+    { id: "stage3", img: markerStage3, alt: "Stage 3", pos: [-0.22030, -78.5121] },
+    { id: "stage4", img: markerStage4, alt: "Stage 4", pos: [-0.21985, -78.5114] },
     { id: "toilet", img: markerToilet, alt: "Toilet", pos: [-0.2207, -78.5131] },
+    { id: "toilet2", img: markerToilet, alt: "Toilet", pos: [-0.2207, -78.5131] },
+    { id: "toilet3", img: markerToilet, alt: "Toilet", pos: [-0.2207, -78.5131] },
     { id: "entranceexit", img: markerEntranceExit, alt: "Entrance/Exit", pos: [-0.2203, -78.5129] },
-    { id: "firstaid", img: markerFirstAid, alt: "First Aid", pos: [-0.2206, -78.5133] },
+    { id: "firstaid", img: markerFirstAid, alt: "First Aid", pos: [-0.22012, -78.51385] },
     { id: "food", img: markerFood, alt: "Food", pos: [-0.2204, -78.5130] },
+    { id: "food2", img: markerFood, alt: "Food", pos: [-0.2204, -78.5130] },
     { id: "icecream", img: markerIceCream, alt: "Ice Cream", pos: [-0.2209, -78.5134] },
-    { id: "locker", img: markerLocker, alt: "Locker", pos: [-0.2205, -78.5131] },
+    { id: "icecream2", img: markerIceCream, alt: "Ice Cream", pos: [-0.2209, -78.5134] },
+    { id: "icecream3", img: markerIceCream, alt: "Ice Cream", pos: [-0.2209, -78.5134] },
+    { id: "icecream4", img: markerIceCream, alt: "Ice Cream", pos: [-0.2209, -78.5134] },
+    { id: "locker", img: markerLocker, alt: "Locker", pos: [-0.22113, -78.51343] },
+    { id: "locker2", img: markerLocker, alt: "Locker", pos: [-0.22115, -78.51365] },
     { id: "merchandise", img: markerMerchandise, alt: "Merchandise", pos: [-0.2208, -78.5132] },
+    { id: "merchandise2", img: markerMerchandise, alt: "Merchandise", pos: [-0.2208, -78.5132] },
+    { id: "merchandise3", img: markerMerchandise, alt: "Merchandise", pos: [-0.2208, -78.5132] },
   ];
 
   return (
