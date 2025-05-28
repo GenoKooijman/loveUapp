@@ -1,11 +1,10 @@
-import { Home as HomeIcon, Map, Music2, Utensils, Ellipsis } from "lucide-react";
+import { Home as HomeIcon, Map, Utensils, Ellipsis, CalendarRange } from "lucide-react";
 
 export default function Footer({ active, setActive }) {
   const tabs = [
     { id: "home", icon: <HomeIcon size={22} />, label: "Home" },
     { id: "map", icon: <Map size={22} />, label: "Map" },
-    { id: "attractions", icon: <Music2 size={22} />, label: "Performances" },
-    { id: "food", icon: <Utensils size={22} />, label: "Food" },
+    { id: "attractions", icon: <CalendarRange size={22} />, label: "Schedule" },
     { id: "More", icon: <Ellipsis size={22} />, label: "More" },
   ];
 

@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 const HomeView = lazy(() => import("./pages/homeView"));
 const MapView = lazy(() => import("./pages/MapView"));
 const MoreView = lazy(() => import("./pages/MoreView"));
-const PerformancesView = lazy(() => import("./pages/PerformancesView"));
+const EventsView = lazy(() => import("./pages/EventsView"));
 const FoodView = lazy(() => import("./pages/FoodView"));
 
 const getSystemTheme = () =>
@@ -56,7 +56,7 @@ export default function LoveUfestivalApp() {
       case "map":
         return <MapView />;
       case "attractions":
-        return <PerformancesView />;
+        return <EventsView />;
       case "food":
         return <FoodView />;
       case "More":
