@@ -1,9 +1,10 @@
 import { useState } from "react";
-import logoBlack from "../assets/logo_black.svg";
-import logoWhite from "../assets/logo_white.svg";
+import logoBlack from "@/assets/logo_black.svg";
+import logoWhite from "@/assets/logo_white.svg";
 
 export default function HomeView({ theme }) {
   const [modalOpen, setModalOpen] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
 
   const newsletter = {
     image: theme === "dark" ? logoWhite : logoBlack,
@@ -14,8 +15,25 @@ export default function HomeView({ theme }) {
       "We are thrilled to announce several new artists joining LoveUfestival 2025! Stay tuned for more updates and exclusive interviews with the performers. Don't miss out on the fun and excitement!",
   };
 
+   const notifications = [
+    {
+      id: 1,
+      title: "Performance starts in 15 min",
+      message: "Armin van Buuren is about to begin his euphoric trance set on the Main Stage. Get ready to dance!",
+      date: "2025-05-28",
+      act: "Armin van Buuren"
+    },
+    {
+      id: 2,
+      title: "Performance starts in 5 min",
+      message: "Martin Garrix will take over the Main Stage in just 5 minutes. Don’t miss the EDM superstar’s explosive show!",
+      date: "2025-05-28",
+      act: "Martin Garrix"
+    },
+  ];
+
   return (
-    <div className="flex flex-col items-center justify-center h-full mt-4">
+    <div className="flex flex-col items-center justify-center h-full mt-12">
       <h1 className="text-3xl text-center text-black dark:text-white font-bold mb-4">
         Welcome to LoveUfestival!
       </h1>
@@ -24,7 +42,62 @@ export default function HomeView({ theme }) {
         alt="Festival Logo"
         className="w-max h-42"
       />
-      <h2 className="text-xl pt-8 mb-4">Newsletter</h2>
+
+      <div className="w-full max-w-md mb-4 flex justify-center mt-4">
+        <button
+          className="relative flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-xl shadow hover:bg-blue-200 dark:hover:bg-blue-800 transition"
+          onClick={() => setShowNotifications((v) => !v)}
+        >
+          <svg className="w-6 h-6 mr-2 text-blue-500 dark:text-blue-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          </svg>
+          Notifications
+          {notifications.length > 0 && (
+            <span className="ml-2 bg-red-500 text-white rounded-full px-2 py-0.5 text-xs">
+              {notifications.length}
+            </span>
+          )}
+        </button>
+      </div>
+      {showNotifications && (
+        <div className="w-full max-w-md mb-4 flex justify-center">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 z-10 w-full origin-top animate-dropdown">
+            <div className="flex justify-between items-center mb-2">
+              <span className="font-bold text-lg text-black dark:text-white">Notifications</span>
+              <button
+                className="text-gray-500 hover:text-red-500 text-xl"
+                onClick={() => setShowNotifications(false)}
+                aria-label="Close"
+              >
+                &times;
+              </button>
+            </div>
+            {notifications.length === 0 ? (
+              <div className="text-gray-500 dark:text-gray-300">No notifications.</div>
+            ) : (
+              <ul>
+                {notifications.map((n, idx) => (
+                  <li
+                    key={n.id}
+                    className={`mb-2 border-b border-gray-200 dark:border-gray-700 pb-2 last:border-b-0 transition-all duration-300
+                      ${showNotifications ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}
+                      `}
+                    style={{
+                      transitionDelay: `${idx * 75}ms`
+                    }}
+                  >
+                    <div className="font-semibold text-black dark:text-white">{n.title}</div>
+                    <div className="text-gray-700 dark:text-gray-300 text-sm">{n.message}</div>
+                    <div className="text-xs text-gray-400 mt-1">{n.date}</div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      )}
+
+      <h2 className="text-xl pt-4 pb-4">Newsletter</h2>
 
       <button
         className="flex items-center bg-white dark:bg-gray-800 rounded-xl shadow-md p-4 w-full max-w-md hover:shadow-lg transition mb-4"
@@ -45,7 +118,7 @@ export default function HomeView({ theme }) {
         </div>
       </button>
 
-    {modalOpen && (
+      {modalOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
           onClick={() => setModalOpen(false)}

@@ -22,3 +22,17 @@
 .animate-modal-in {
   animation: modal-in 0.3s cubic-bezier(0.4,0,0.2,1);
 }
+
+.animate-dropdown {
+          animation: dropdown 0.35s cubic-bezier(0.4,0,0.2,1);
+        }
+        @keyframes dropdown {
+          0% {
+            opacity: 0;
+            transform: scaleY(0.8) translateY(-16px);
+          }
+          100% {
+            opacity: 1;
+            transform: scaleY(1) translateY(0);
+          }
+        }
