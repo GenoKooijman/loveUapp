@@ -3,7 +3,7 @@
     "name": "Armin van Buuren",
     "shortDescription": "Trance icon",
     "description": "Five-time “World’s No. 1 DJ” and trance icon, Armin delivers euphoric, high-energy sets that have headlined festivals from Tomorrowland to Ultra. His uplifting melodies and impeccable mixing keep crowds dancing for hours.",
-    "image": "3a274195-9bad-4ce5-8121-234f0a2917d6.png",
+    "image": "ArminvanBuuren.png",
     "video": "https://www.youtube.com/watch?v=TxvpctgU_s8",
     "time": "Saturday, 10:30–12:00",
     "stage": "Poton"
@@ -12,7 +12,7 @@
     "name": "Martin Garrix",
     "shortDescription": "EDM superstar",
     "description": "Broke through as a teenager with “Animals,” Martin Garrix has become one of the biggest names in EDM. His anthemic big-room tracks and stadium-sized drops make him a festival favorite across Europe.",
-    "image": "8e114bd0-d716-4991-a80b-9bfbc73effb1.png",
+    "image": "Martingarix.png",
     "video": "https://www.youtube.com/watch?v=Zv1QV6lrc_Y",
     "time": "Sunday, 11:00–13:00",
     "stage": "Poton"
@@ -21,7 +21,7 @@
     "name": "Kensington",
     "shortDescription": "Indie rock anthems",
     "description": "Rotterdam-born indie rock quintet known for soaring choruses and driving guitar riffs. Hits like “Streets” and “Riddles” showcase their knack for arena-ready hooks and emotionally charged lyricism.",
-    "image": "96c7661a-a188-4324-a823-cd0b1a5a1228.png",
+    "image": "keningston.png",
     "video": "https://www.youtube.com/watch?v=IH77eOyV95o",
     "time": "Saturday, 12:15–13:45",
     "stage": "Poton"
@@ -30,7 +30,7 @@
     "name": "Within Temptation",
     "shortDescription": "Symphonic metal pioneers",
     "description": "Symphonic metal pioneers fronted by Sharon den Adel. Their cinematic soundscapes and operatic vocals (think “Ice Queen,” “Mother Earth”) translate into dramatic, visually stunning festival performances.",
-    "image": "ac20d31e-6743-476b-b95c-83a5ee40ef6d.png",
+    "image": "WithinTemptation.png",
     "video": "https://www.youtube.com/watch?v=iQVei5C2N4E",
     "time": "Sunday, 13:15–15:00",
     "stage": "Poton"
@@ -39,7 +39,7 @@
     "name": "De Staat",
     "shortDescription": "Experimental rock innovators",
     "description": "Experimental rock outfit from Nijmegen, blending funky grooves with angular guitar work and theatrical stagecraft. Tracks like “Witch Doctor” and “Down Town” highlight their genre-bending approach and infectious energy.",
-    "image": "73710fe9-7fa0-4671-b925-b6c34d19b699.png",
+    "image": "DeStaat.png",
     "video": "https://www.youtube.com/watch?v=0ttGgIQpAUc",
     "time": "Saturday, 14:00–15:30",
     "stage": "Poton"
@@ -48,7 +48,7 @@
     "name": "Chef’Special",
     "shortDescription": "Genre-blending funk-pop",
     "description": "A four-piece from Haarlem mixing funk, pop, rock and hip-hop. Their upbeat, genre-fluid sound on songs like “Amigo” and “In Your Arms” makes for joyous, dance-floor-friendly live shows.",
-    "image": "d009deb4-5a7d-4290-93b4-04bdbbb8b18a.png",
+    "image": "ChefSpecial.png",
     "video": "https://www.youtube.com/watch?v=l3jRIr44lss",
     "time": "Sunday, 15:15–17:00",
     "stage": "Poton"
@@ -57,7 +57,7 @@
     "name": "Navarone",
     "shortDescription": "Hard-hitting rock four-piece",
     "description": "Utrecht’s hard-hitting rock four-piece, delivering riff-driven anthems and dynamic vocals. With a live reputation for raw intensity, they’re tailor-made for late-night main stages.",
-    "image": "71ab5307-49ca-44f7-8858-252ada1b16ba.png",
+    "image": "Navarone.png",
     "video": "https://www.youtube.com/watch?v=EvLpaCSnc4k",
     "time": "Saturday, 16:45–18:15",
     "stage": "Poton"
@@ -66,7 +66,7 @@
     "name": "Dotan",
     "shortDescription": "Folk-pop singer-songwriter",
     "description": "Folk-pop singer-songwriter whose intimate voice and acoustic arrangements (notably on “Home”) have earned him platinum sales and sell-out shows. His heartfelt storytelling connects deeply on festival acoustic stages.",
-    "image": "c425815d-83bc-4543-a843-73307da346bb.png",
+    "image": "dotan.png",
     "video": "https://www.youtube.com/watch?v=FZEuqzW16Nw",
     "time": "Saturday, 18:30–20:00",
     "stage": "Poton"
@@ -75,7 +75,7 @@
     "name": "Eefje de Visser",
     "shortDescription": "Atmospheric indie-pop",
     "description": "Indie-pop artist crafting atmospheric, electronic-tinged songs. Her hypnotic vocals and lush production (as heard on “Ongeveer”) create a dreamlike vibe perfect for twilight festival slots.",
-    "image": "f2fccafc-36ec-4631-a9c3-deef8d3f49a3.png",
+    "image": "EefjedeVisser.png",
     "video": "https://www.youtube.com/watch?v=6IlLJNmLDMg",
     "time": "Sunday, 19:00–20:30",
     "stage": "Poton"
@@ -84,7 +84,7 @@
     "name": "Froukje",
     "shortDescription": "Candid pop songwriter",
     "description": "Breakthrough pop singer Froukje Veenstra combines candid lyrics with catchy, synth-driven hooks. Since her 2021 debut, she’s become a voice of her generation—ideal for mid-day festival stages.",
-    "image": "ba7582fa-5c93-49db-bd5c-d283c842a994.png",
+    "image": "froukje.png",
     "video": "https://www.youtube.com/watch?v=g4PlReX9e-E",
     "time": "Saturday, 20:15–21:45",
     "stage": "Poton"
@@ -93,7 +93,7 @@
     "name": "Spinvis",
     "shortDescription": "Poetic lo-fi surrealist in pop form",
     "description": "Erik de Jong performs under the moniker Spinvis, crafting poetic, collage-like songs that blend spoken-word snippets, lo-fi electronics and wistful pop. Since his debut album in 2002—recorded in his attic—he’s become a fixture of Dutch indie, renowned for narratives that feel both intimate and surreal. His live shows turn everyday observations into shared, dreamlike experiences.",
-    "image": "4657efb0-4b5a-4308-a402-635d1cd0f9e0.png",
+    "image": "Spinvis.png",
     "video": "https://www.youtube.com/watch?v=F3ZTrGWSLf4",
     "time": "Sunday, 21:00–22:30",
     "stage": "Poton"

@@ -7,7 +7,6 @@ const HomeView = lazy(() => import("./pages/homeView"));
 const MapView = lazy(() => import("./pages/MapView"));
 const MoreView = lazy(() => import("./pages/MoreView"));
 const EventsView = lazy(() => import("./pages/EventsView"));
-const FoodView = lazy(() => import("./pages/FoodView"));
 
 const getSystemTheme = () =>
   window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -57,8 +56,6 @@ export default function LoveUfestivalApp() {
         return <MapView />;
       case "attractions":
         return <EventsView />;
-      case "food":
-        return <FoodView />;
       case "More":
         return <MoreView />;
       default:
