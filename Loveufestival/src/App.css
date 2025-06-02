@@ -37,10 +37,15 @@
           }
         }
 
-.scrollbar-hide {
+* {
   scrollbar-width: none; 
-  -ms-overflow-style: none;  
+  -ms-overflow-style: none; 
 }
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+*::-webkit-scrollbar {
+  display: none; 
+}
+
+.custom-leaflet-popup .leaflet-popup-content {
+  max-height: 180px;
+  overflow-y: auto;
 }

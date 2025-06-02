@@ -1,10 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logoBlack from "@/assets/logo_black.svg";
 import logoWhite from "@/assets/logo_white.svg";
+import eventsData from "../data/events.json";
+
+function getEventStartDate(event) {
+  let day, time;
+  if (event.day && event.time) {
+    day = event.day;
+    time = event.time;
+  } else if (event.time && event.time.includes(",")) {
+    [day, time] = event.time.split(",");
+    time = time.trim();
+  } else {
+    return null;
+  }
+  day = day.trim().toLowerCase();
+  let dateStr = "";
+  if (day.startsWith("sat")) dateStr = "2025-05-31";
+  else if (day.startsWith("sun")) dateStr = "2025-06-01";
+  else return null;
+
+  const startTime = time.split("–")[0].trim().padStart(5, "0");
+  const iso = `${dateStr}T${startTime}:00`;
+  return new Date(iso);
+}
 
 export default function HomeView({ theme }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [notifications, setNotifications] = useState([]);
 
   const newsletter = {
     image: theme === "dark" ? logoWhite : logoBlack,
@@ -15,28 +39,42 @@ export default function HomeView({ theme }) {
       "We are thrilled to announce several new artists joining LoveUfestival 2025! Stay tuned for more updates and exclusive interviews with the performers. Don't miss out on the fun and excitement!",
   };
 
-   const notifications = [
-    {
-      id: 1,
-      title: "Performance starts in 15 min",
-      message: "Armin van Buuren is about to begin his euphoric trance set on the Main Stage. Get ready to dance!",
-      date: "2025-05-28",
-      act: "Armin van Buuren"
-    },
-    {
-      id: 2,
-      title: "Performance starts in 5 min",
-      message: "Martin Garrix will take over the Main Stage in just 5 minutes. Don’t miss the EDM superstar’s explosive show!",
-      date: "2025-05-28",
-      act: "Martin Garrix"
-    },
-  ];
+  useEffect(() => {
+    const checkNotifications = () => {
+      const now = new Date();
+      const soon = new Date(now.getTime() + 15 * 60 * 1000);
+
+      const notifs = eventsData
+        .map((event) => {
+          const start = getEventStartDate(event);
+          if (!start) return null;
+          if (start > now && start <= soon) {
+            return {
+              id: `${event.name}-${start.toISOString()}`,
+              title: `Performance starts in ${Math.round((start - now) / 60000)} min`,
+              message: `${event.name} is about to begin on the ${event.stage || "Main Stage"}.`,
+              date: start.toLocaleString(),
+              act: event.name,
+            };
+          }
+          return null;
+        })
+        .filter(Boolean);
+
+      setNotifications(notifs);
+    };
+
+    checkNotifications();
+    const interval = setInterval(checkNotifications, 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center h-full mt-12">
-      <h1 className="text-3xl text-center text-black dark:text-white font-bold mb-4">
+      <h1 className="text-3xl text-center font-bold mb-4 text-[var(--color-secondary)] dark:text-sky-400">
         Welcome to LoveUfestival!
       </h1>
+
       <img
         src={theme === "dark" ? logoWhite : logoBlack}
         alt="Festival Logo"
@@ -45,10 +83,10 @@ export default function HomeView({ theme }) {
 
       <div className="w-full max-w-md mb-4 flex justify-center mt-4">
         <button
-          className="relative flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-xl shadow hover:bg-blue-200 dark:hover:bg-blue-800 transition"
+          className="relative flex items-center px-4 py-2 bg-[var(--color-accent)] text-white rounded-xl shadow hover:brightness-110 transition"
           onClick={() => setShowNotifications((v) => !v)}
         >
-          <svg className="w-6 h-6 mr-2 text-blue-500 dark:text-blue-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
           </svg>
           Notifications
@@ -59,6 +97,7 @@ export default function HomeView({ theme }) {
           )}
         </button>
       </div>
+
       {showNotifications && (
         <div className="w-full max-w-md mb-4 flex justify-center">
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 z-10 w-full origin-top animate-dropdown">
@@ -80,15 +119,12 @@ export default function HomeView({ theme }) {
                   <li
                     key={n.id}
                     className={`mb-2 border-b border-gray-200 dark:border-gray-700 pb-2 last:border-b-0 transition-all duration-300
-                      ${showNotifications ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}
-                      `}
-                    style={{
-                      transitionDelay: `${idx * 75}ms`
-                    }}
+                      ${showNotifications ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}
+                    style={{ transitionDelay: `${idx * 75}ms` }}
                   >
                     <div className="font-semibold text-black dark:text-white">{n.title}</div>
                     <div className="text-gray-700 dark:text-gray-300 text-sm">{n.message}</div>
-                    <div className="text-xs text-gray-400 mt-1">{n.date}</div>
+                    <div className="text-xs mt-1 text-[var(--color-info)]">{n.date}</div>
                   </li>
                 ))}
               </ul>
@@ -97,16 +133,16 @@ export default function HomeView({ theme }) {
         </div>
       )}
 
-      <h2 className="text-xl pt-4 pb-4">Newsletter</h2>
+      <h2 className="text-xl pt-4 pb-4 text-[var(--color-secondary)] dark:text-sky-400">Newsletter</h2>
 
       <button
-        className="flex items-center bg-white dark:bg-gray-800 rounded-xl shadow-md p-4 w-full max-w-md hover:shadow-lg transition mb-4"
+        className="flex items-center bg-white dark:bg-gray-800 rounded-xl shadow-md p-4 w-full max-w-md hover:shadow-lg transition mb-4 border border-[var(--color-accent)]"
         onClick={() => setModalOpen(true)}
       >
         <img
           src={newsletter.image}
           alt="Newsletter"
-          className="w-18 h-18 rounded-full mr-4 border-2 border-red-300"
+          className="w-18 h-18 rounded-full mr-4 border-2 border-[var(--color-accent)]"
         />
         <div className="flex-1 text-left">
           <div className="font-bold text-lg text-black dark:text-white">
@@ -137,7 +173,7 @@ export default function HomeView({ theme }) {
             <img
               src={newsletter.image}
               alt="Newsletter"
-              className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-2 border-red-300"
+              className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-2 border-[var(--color-accent)]"
             />
             <div className="font-bold text-xl text-center text-black dark:text-white mb-2">
               {newsletter.title}
@@ -148,10 +184,7 @@ export default function HomeView({ theme }) {
           </div>
         </div>
       )}
-
-      <p className="text-lg text-gray-700 dark:text-gray-300 mt-4">
-        This is your home page.
-      </p>
     </div>
   );
 }
+

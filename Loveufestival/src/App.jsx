@@ -53,11 +53,11 @@ export default function LoveUfestivalApp() {
       case "home":
         return <HomeView theme={theme} language={language} />;
       case "map":
-        return <MapView />;
+        return <MapView theme={theme} language={language} />;
       case "attractions":
-        return <EventsView />;
+        return <EventsView theme={theme} language={language} />;
       case "More":
-        return <MoreView />;
+        return <MoreView theme={theme} language={language} />;
       default:
         return <HomeView theme={theme} language={language} />;
     }

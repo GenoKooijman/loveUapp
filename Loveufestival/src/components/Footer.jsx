@@ -1,43 +1,54 @@
-import { Home as HomeIcon, Map, Utensils, Ellipsis, CalendarRange } from "lucide-react";
+import {
+  Home as HomeIcon,
+  Map,
+  CalendarRange,
+  Ellipsis,
+} from "lucide-react";
 
 export default function Footer({ active, setActive }) {
   const tabs = [
-    { id: "home", icon: <HomeIcon size={22} />, label: "Home" },
-    { id: "map", icon: <Map size={22} />, label: "Map" },
-    { id: "attractions", icon: <CalendarRange size={22} />, label: "Schedule" },
-    { id: "More", icon: <Ellipsis size={22} />, label: "More" },
+    { id: "home", icon: <HomeIcon size={18} />, label: "Home" },
+    { id: "map", icon: <Map size={18} />, label: "Map" },
+    { id: "attractions", icon: <CalendarRange size={18} />, label: "Events" },
+    { id: "More", icon: <Ellipsis size={18} />, label: "More" },
   ];
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[95vw] max-w-md mx-auto z-20">
-      <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md shadow-lg rounded-full flex justify-around items-center py-2 px-2 border border-gray-200 dark:border-gray-700">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            className="flex flex-col items-center"
-            onClick={() => setActive(tab.id)}
-          >
-            <span
-              className={`flex items-center justify-center w-12 h-12 rounded-full transition ${
-                active === tab.id
-                  ? "bg-red-200 dark:bg-red-800 text-red-700 dark:text-red-200 font-bold shadow"
-                  : "text-gray-500 dark:text-gray-400"
-              }`}
+    <div className="fixed bottom-2 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs mx-auto z-20">
+      <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg rounded-full flex justify-around items-center py-1 px-1 border border-gray-200 dark:border-gray-700">
+        {tabs.map((tab) => {
+          const isActive = active === tab.id;
+
+          return (
+            <button
+              key={tab.id}
+              className="flex flex-col items-center"
+              onClick={() => setActive(tab.id)}
             >
-              {tab.icon}
-            </span>
-            <span
-              className={`text-xs mt-1 transition ${
-                active === tab.id
-                  ? "text-red-700 dark:text-red-200 font-bold"
-                  : "text-gray-500 dark:text-gray-400"
-              }`}
-            >
-              {tab.label}
-            </span>
-          </button>
-        ))}
+              <span
+                className={`flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 ${
+                  isActive
+                    ? "bg-red-600 dark:bg-red-700 text-white shadow-md"
+                    : "text-sky-700 dark:text-sky-400"
+                }`}
+              >
+                {tab.icon}
+              </span>
+              <span
+                className={`text-[10px] mt-0.5 transition-all duration-200 ${
+                  isActive
+                    ? "text-red-600 dark:text-red-400 font-semibold"
+                    : "text-sky-700 dark:text-sky-400"
+                }`}
+              >
+                {tab.label}
+              </span>
+            </button>
+          );
+        })}
       </div>
     </div>
   );
 }
+
+
