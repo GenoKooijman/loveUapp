@@ -3,6 +3,7 @@ import {
   Map,
   CalendarRange,
   Ellipsis,
+  Info,
 } from "lucide-react";
 
 export default function Footer({ active, setActive }) {
@@ -10,7 +11,7 @@ export default function Footer({ active, setActive }) {
     { id: "home", icon: <HomeIcon size={18} />, label: "Home" },
     { id: "map", icon: <Map size={18} />, label: "Map" },
     { id: "attractions", icon: <CalendarRange size={18} />, label: "Events" },
-    { id: "More", icon: <Ellipsis size={18} />, label: "More" },
+    { id: "More", icon: <Info size={18} />, label: "Info" },
   ];
 
   return (

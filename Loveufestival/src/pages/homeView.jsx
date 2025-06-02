@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import logoBlack from "@/assets/logo_black.svg";
 import logoWhite from "@/assets/logo_white.svg";
 import eventsData from "../data/events.json";
+import en from "../locales/en.json";
+import nl from "../locales/nl.json";
 
 function getEventStartDate(event) {
   let day, time;
@@ -25,18 +27,21 @@ function getEventStartDate(event) {
   return new Date(iso);
 }
 
-export default function HomeView({ theme }) {
+function getLocale(language) {
+  return language === "nl" ? nl : en;
+}
+
+export default function HomeView({ theme, language = "en" }) {
+  const t = getLocale(language);
   const [modalOpen, setModalOpen] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [notifications, setNotifications] = useState([]);
 
   const newsletter = {
     image: theme === "dark" ? logoWhite : logoBlack,
-    title: "Festival Update: New Artists Announced!",
-    description:
-      "Check out the latest additions to our lineup and what to expect this year.",
-    fullText:
-      "We are thrilled to announce several new artists joining LoveUfestival 2025! Stay tuned for more updates and exclusive interviews with the performers. Don't miss out on the fun and excitement!",
+    title: t.home.newsletterTitle,
+    description: t.home.newsletterDescription,
+    fullText: t.home.newsletterFullText,
   };
 
   useEffect(() => {
@@ -51,8 +56,12 @@ export default function HomeView({ theme }) {
           if (start > now && start <= soon) {
             return {
               id: `${event.name}-${start.toISOString()}`,
-              title: `Performance starts in ${Math.round((start - now) / 60000)} min`,
-              message: `${event.name} is about to begin on the ${event.stage || "Main Stage"}.`,
+              title: language === "nl"
+                ? `Optreden begint over ${Math.round((start - now) / 60000)} min`
+                : `Performance starts in ${Math.round((start - now) / 60000)} min`,
+              message: language === "nl"
+                ? `${event.name} begint bijna op het ${event.stage || "Hoofdpodium"}.`
+                : `${event.name} is about to begin on the ${event.stage || "Main Stage"}.`,
               date: start.toLocaleString(),
               act: event.name,
             };
@@ -67,12 +76,12 @@ export default function HomeView({ theme }) {
     checkNotifications();
     const interval = setInterval(checkNotifications, 60 * 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [language]);
 
   return (
     <div className="flex flex-col items-center justify-center h-full mt-12">
       <h1 className="text-3xl text-center font-bold mb-4 text-[var(--color-secondary)] dark:text-sky-400">
-        Welcome to LoveUfestival!
+        {t.home.welcome}
       </h1>
 
       <img
@@ -89,7 +98,7 @@ export default function HomeView({ theme }) {
           <svg className="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
           </svg>
-          Notifications
+          {t.home.notifications}
           {notifications.length > 0 && (
             <span className="ml-2 bg-red-500 text-white rounded-full px-2 py-0.5 text-xs">
               {notifications.length}
@@ -102,7 +111,7 @@ export default function HomeView({ theme }) {
         <div className="w-full max-w-md mb-4 flex justify-center">
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 z-10 w-full origin-top animate-dropdown">
             <div className="flex justify-between items-center mb-2">
-              <span className="font-bold text-lg text-black dark:text-white">Notifications</span>
+              <span className="font-bold text-lg text-black dark:text-white">{t.home.notifications}</span>
               <button
                 className="text-gray-500 hover:text-red-500 text-xl"
                 onClick={() => setShowNotifications(false)}
@@ -112,7 +121,7 @@ export default function HomeView({ theme }) {
               </button>
             </div>
             {notifications.length === 0 ? (
-              <div className="text-gray-500 dark:text-gray-300">No notifications.</div>
+              <div className="text-gray-500 dark:text-gray-300">{t.home.noNotifications}</div>
             ) : (
               <ul>
                 {notifications.map((n, idx) => (
@@ -133,7 +142,7 @@ export default function HomeView({ theme }) {
         </div>
       )}
 
-      <h2 className="text-xl pt-4 pb-4 text-[var(--color-secondary)] dark:text-sky-400">Newsletter</h2>
+      <h2 className="text-xl pt-4 pb-4 text-[var(--color-secondary)] dark:text-sky-400">{t.home.newsletter}</h2>
 
       <button
         className="flex items-center bg-white dark:bg-gray-800 rounded-xl shadow-md p-4 w-full max-w-md hover:shadow-lg transition mb-4 border border-[var(--color-accent)]"

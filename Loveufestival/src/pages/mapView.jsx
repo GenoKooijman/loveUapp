@@ -15,6 +15,12 @@ import markerIceCream from "../assets/marker_ice_cream.svg";
 import markerLocker from "../assets/marker_locker.svg";
 import markerMerchandise from "../assets/marker_merchandise.svg";
 import events from "../data/events.json";
+import en from "../locales/en.json";
+import nl from "../locales/nl.json";
+
+function getLocale(language) {
+  return language === "nl" ? nl : en;
+}
 
 // Hide the attribution control (Leaflet link)
 function HideAttribution() {
@@ -64,28 +70,25 @@ const markers = [
   { id: "merchandise3", img: markerMerchandise, alt: "Merchandise", pos: [-0.22033, -78.5122] },
 ];
 
-function getArtistsForStage(stage) {
-  const filtered = events
-    .filter(
-      (e) =>
-        e.stage &&
-        e.stage.toLowerCase() === stage.toLowerCase() &&
-        e.name &&
-        e.time
-    )
-    .slice(0, 3);
-  return filtered;
-}
-
-function getPopupContent(marker) {
+// Helper to get translations for marker popups
+function getPopupContent(marker, t) {
   if (marker.stage) {
-    const artists = getArtistsForStage(marker.stage);
+    // Show artists for this stage
+    const filtered = events
+      .filter(
+        (e) =>
+          e.stage &&
+          e.stage.toLowerCase() === marker.stage.toLowerCase() &&
+          e.name &&
+          e.time
+      )
+      .slice(0, 3);
     return (
       <>
         <h2 className="text-lg font-bold mb-2">{marker.alt}</h2>
-        {artists.length > 0 ? (
+        {filtered.length > 0 ? (
           <ul className="mb-2">
-            {artists.map((artist) => (
+            {filtered.map((artist) => (
               <li key={artist.name} className="mb-1">
                 <span className="font-semibold">{artist.name}</span>
                 {artist.time && (
@@ -95,13 +98,12 @@ function getPopupContent(marker) {
             ))}
           </ul>
         ) : (
-          <p className="mb-2">No artist info available.</p>
+          <p className="mb-2">{t.map.stage?.noArtistInfo || "No artist info available."}</p>
         )}
-        <p>Click for full line-up in the Events tab!</p>
+        <p>{t.map.stage?.clickForFullLineup || "Click for full line-up in the Events tab!"}</p>
       </>
     );
   }
-  // Info for each icon type, with specific food/drink/flavor lists
   switch (marker.id) {
     case "bar":
     case "bar2":
@@ -109,8 +111,8 @@ function getPopupContent(marker) {
     case "bar4":
       return (
         <>
-          <h2 className="text-lg font-bold mb-2">Bar</h2>
-          <p>Drinks available:</p>
+          <h2 className="text-lg font-bold mb-2">{t.map.bar?.title || "Bar"}</h2>
+          <p>{t.map.bar?.drinks || "Drinks available:"}</p>
           <ul className="mb-2">
             {marker.drinks?.map((drink) => (
               <li key={drink}>• {drink}</li>
@@ -122,8 +124,8 @@ function getPopupContent(marker) {
     case "food2":
       return (
         <>
-          <h2 className="text-lg font-bold mb-2">Food</h2>
-          <p>Food options:</p>
+          <h2 className="text-lg font-bold mb-2">{t.map.food?.title || "Food"}</h2>
+          <p>{t.map.food?.foods || "Food options:"}</p>
           <ul className="mb-2">
             {marker.foods?.map((food) => (
               <li key={food}>• {food}</li>
@@ -137,8 +139,8 @@ function getPopupContent(marker) {
     case "icecream4":
       return (
         <>
-          <h2 className="text-lg font-bold mb-2">Ice Cream</h2>
-          <p>Flavors available:</p>
+          <h2 className="text-lg font-bold mb-2">{t.map.iceCream?.title || "Ice Cream"}</h2>
+          <p>{t.map.iceCream?.flavors || "Flavors available:"}</p>
           <ul className="mb-2">
             {marker.flavors?.map((flavor) => (
               <li key={flavor}>• {flavor}</li>
@@ -151,30 +153,30 @@ function getPopupContent(marker) {
     case "toilet3":
       return (
         <>
-          <h2 className="text-lg font-bold mb-2">Toilet</h2>
-          <p>Restrooms are available here for your convenience.</p>
+          <h2 className="text-lg font-bold mb-2">{t.map.toilet?.title || "Toilet"}</h2>
+          <p>{t.map.toilet?.desc || "Restrooms are available here for your convenience."}</p>
         </>
       );
     case "entranceexit":
       return (
         <>
-          <h2 className="text-lg font-bold mb-2">Entrance / Exit</h2>
-          <p>This is the main entrance and exit of the festival grounds.</p>
+          <h2 className="text-lg font-bold mb-2">{t.map.entranceExit?.title || "Entrance / Exit"}</h2>
+          <p>{t.map.entranceExit?.desc || "This is the main entrance and exit of the festival grounds."}</p>
         </>
       );
     case "firstaid":
       return (
         <>
-          <h2 className="text-lg font-bold mb-2">First Aid</h2>
-          <p>Need help? Visit the first aid station for medical assistance.</p>
+          <h2 className="text-lg font-bold mb-2">{t.map.firstAid?.title || "First Aid"}</h2>
+          <p>{t.map.firstAid?.desc || "Need help? Visit the first aid station for medical assistance."}</p>
         </>
       );
     case "locker":
     case "locker2":
       return (
         <>
-          <h2 className="text-lg font-bold mb-2">Locker</h2>
-          <p>Store your belongings safely in a locker.</p>
+          <h2 className="text-lg font-bold mb-2">{t.map.locker?.title || "Locker"}</h2>
+          <p>{t.map.locker?.desc || "Store your belongings safely in a locker."}</p>
         </>
       );
     case "merchandise":
@@ -182,8 +184,8 @@ function getPopupContent(marker) {
     case "merchandise3":
       return (
         <>
-          <h2 className="text-lg font-bold mb-2">Merchandise</h2>
-          <p>Get your official festival merchandise here!</p>
+          <h2 className="text-lg font-bold mb-2">{t.map.merchandise?.title || "Merchandise"}</h2>
+          <p>{t.map.merchandise?.desc || "Get your official festival merchandise here!"}</p>
         </>
       );
     default:
@@ -196,7 +198,9 @@ function getPopupContent(marker) {
   }
 }
 
-export default function MapView() {
+export default function MapView({ language = "en" }) {
+  const t = getLocale(language);
+
   return (
     <div className="relative w-full h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="absolute inset-0 z-0">
@@ -216,19 +220,13 @@ export default function MapView() {
           <HideAttribution />
           <ImageOverlay url={map} bounds={imageBounds} />
           {markers.map((marker) => (
-              <Marker
+            <Marker
               key={marker.id}
               position={marker.pos}
               icon={createIcon(marker.img)}
             >
-              <Popup 
-                autoPan={true}
-                autoPanPadding={[200, 200]}
-                keepInView={true}         
-                maxWidth={220}
-                className="custom-leaflet-popup"
-              >
-                {getPopupContent(marker)}
+              <Popup>
+                {getPopupContent(marker, t)}
               </Popup>
             </Marker>
           ))}

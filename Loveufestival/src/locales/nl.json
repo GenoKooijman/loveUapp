@@ -1,26 +1,382 @@
 {
-  "section": {
-    "title": "Sectietitel",
-    "info": "Dit is wat informatie over deze sectie."
+  "navbar": {
+    "searchPlaceholder": "Zoek in LoveUfestival...",
+    "toggleDarkMode": "Schakel Donkere Modus",
+    "language": "NL"
   },
-  "profile": {
-    "title": "Profiel",
-    "info": "Beheer hier je persoonlijke informatie."
+  "footer": {
+    "home": "Home",
+    "map": "Kaart",
+    "events": "Evenementen",
+    "info": "Info"
   },
-  "settings": {
-    "title": "Instellingen",
-    "info": "Pas je voorkeuren en configuraties aan."
+  "home": {
+    "welcome": "Welkom bij LoveUfestival!",
+    "notifications": "Meldingen",
+    "noNotifications": "Geen meldingen.",
+    "newsletter": "Nieuwsbrief",
+    "newsletterTitle": "Festival Update: Nieuwe artiesten aangekondigd!",
+    "newsletterDescription": "Bekijk de nieuwste toevoegingen aan onze line-up en wat je dit jaar kunt verwachten.",
+    "newsletterFullText": "We zijn verheugd om verschillende nieuwe artiesten aan te kondigen voor LoveUfestival 2025! Blijf op de hoogte voor meer updates en exclusieve interviews met de artiesten. Mis het plezier en de spanning niet!"
   },
-  "notifications": {
-    "title": "Meldingen",
-    "info": "Bekijk je recente meldingen en waarschuwingen."
+  "more": {
+    "festivalInformation": "Festivalinformatie",
+    "sections": {
+      "generalContact": {
+        "title": "Algemeen & Contact",
+        "content": {
+          "description": "Het ❤️U Festival is voor (nieuwe) studenten in de regio Utrecht en is een aanvulling op de UIT.",
+          "location": "Locatie:",
+          "locationValue": "Strijkviertel, Utrecht",
+          "navigationAddress": "Navigatieadres:",
+          "navigationAddressValue": "Strijkviertelweg, Utrecht",
+          "date": "Datum:",
+          "dateValue": "Zaterdag 6 september 2025",
+          "time": "Tijd:",
+          "timeValue": "12:00 - 23:00"
+        }
+      },
+      "accessibility": {
+        "title": "Bereikbaarheid",
+        "content": {
+          "bike": "Fiets:",
+          "bikeValue": "Gratis fietsenstalling beschikbaar.",
+          "car": "Auto:",
+          "carValue": "Parkeren bij P+R Papendorp met online ticket of ter plaatse (ALLEEN PIN, OP=OP).",
+          "publicTransport": "Openbaar vervoer:",
+          "publicTransportValue": "Plan je reis via 9292.nl.",
+          "shuttleBus": "Pendeldienst:",
+          "shuttleBusValue": "Gratis vanaf Utrecht Centraal tussen 12:00–19:00 (heen) en vanaf 21:00 (terug).",
+          "taxi": "Taxi & Kiss & Ride:",
+          "taxiValue": "Volg de borden bij Strijkviertel, De Meern."
+        }
+      },
+      "lockers": {
+        "title": "Lockers",
+        "content": {
+          "lockersAvailable": "Lockers zijn beschikbaar op het festival. Geschikt voor 3 tot 4 jassen.",
+          "unlimitedAccess": "Je kunt je locker onbeperkt openen en sluiten.",
+          "noOnlineReservation": "Let op: Je kunt geen lockers online reserveren."
+        }
+      },
+      "faq": {
+        "title": "FAQ",
+        "content": {
+          "medication": "Medicatie:",
+          "medicationValue": "Toegestaan met doktersverklaring. Kan in bewaring bij de EHBO-post.",
+          "leaving": "Tijdelijk verlaten:",
+          "leavingValue": "Niet toegestaan i.v.m. veiligheid. Geniet van het festivalterrein!",
+          "lockers": "Lockers:",
+          "lockersValue": "Middelgrote en grote lockers beschikbaar."
+        }
+      },
+      "goldenGlu": {
+        "title": "Gouden GLU",
+        "content": {
+          "description": "GLU-studenten hebben speciale privileges dankzij hun gouden polsbandje:",
+          "toilet": "Toegang tot gouden toiletten",
+          "fastService": "Snelle service bij gemarkeerde barren"
+        }
+      }
+    }
   },
-  "help": {
-    "title": "Help",
-    "info": "Vind antwoorden op veelgestelde vragen."
+  "map": {
+    "bar": {
+      "title": "Bar",
+      "drinks": "Beschikbare drankjes:"
+    },
+    "food": {
+      "title": "Eten",
+      "foods": "Eetopties:"
+    },
+    "iceCream": {
+      "title": "IJs",
+      "flavors": "Beschikbare smaken:"
+    },
+    "toilet": {
+      "title": "Toilet",
+      "desc": "Hier zijn toiletten voor jouw gemak."
+    },
+    "entranceExit": {
+      "title": "Ingang / Uitgang",
+      "desc": "Dit is de hoofd-ingang en uitgang van het festivalterrein."
+    },
+    "firstAid": {
+      "title": "EHBO",
+      "desc": "Hulp nodig? Bezoek de EHBO-post voor medische assistentie."
+    },
+    "locker": {
+      "title": "Locker",
+      "desc": "Bewaar je spullen veilig in een locker."
+    },
+    "merchandise": {
+      "title": "Merchandise",
+      "desc": "Haal hier je officiële festivalmerchandise!"
+    },
+    "stage": {
+      "clickForFullLineup": "Klik voor het volledige programma in het tabblad Evenementen!",
+      "noArtistInfo": "Geen artiestinformatie beschikbaar."
+    }
   },
-  "about": {
-    "title": "Over",
-    "info": "Lees meer over deze applicatie."
-  }
+  "events": {
+    "title": "Evenementen",
+    "days": {
+      "saturday": "Zaterdag",
+      "sunday": "Zondag"
+    },
+    "stages": [],
+    "eventTypes": {
+      "dj": "DJ Set",
+      "special": "Special",
+      "workshop": "Workshop",
+      "meeting": "Meeting",
+      "default": "Evenement"
+    },
+    "modal": {
+      "stage": "Podium:",
+      "time": "Tijd:"
+    }
+  },
+  "eventsData": [
+    {
+      "name": "Armin van Buuren",
+      "description": "Vijfvoudig 's werelds nr. 1 DJ en trance-icoon. Armin brengt euforische, energieke sets die festivals als Tomorrowland en Ultra hebben afgesloten. Zijn opzwepende melodieën en perfecte mixen laten het publiek uren dansen.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Martin Garrix",
+      "description": "Doorgebroken als tiener met 'Animals', inmiddels een van de grootste namen in EDM. Zijn anthems en stadionwaardige drops maken hem een festivalfavoriet in heel Europa.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Kensington",
+      "description": "Indierockband uit Rotterdam, bekend om meeslepende refreinen en krachtige gitaarpartijen. Hits als 'Streets' en 'Riddles' tonen hun gevoel voor pakkende hooks en emotie.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Within Temptation",
+      "description": "Symfonische metalpioniers onder leiding van Sharon den Adel. Hun filmische sound en operazang (zoals 'Ice Queen', 'Mother Earth') zorgen voor indrukwekkende festivalshows.",
+      "day": "Zondag"
+    },
+    {
+      "name": "De Staat",
+      "description": "Experimentele rockband uit Nijmegen, met funky grooves, hoekige gitaren en theatraal optreden. Nummers als 'Witch Doctor' en 'Down Town' tonen hun genre-overschrijdende energie.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Chef’Special",
+      "description": "Vierkoppige band uit Haarlem die funk, pop, rock en hiphop mixt. Hun vrolijke, genreloze sound (zoals 'Amigo' en 'In Your Arms') zorgt voor dansbare liveshows.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Navarone",
+      "description": "Utrechtse rockband met stevige riffs en dynamische zang. Bekend om hun intense live-reputatie, perfect voor het hoofdpodium in de avond.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Dotan",
+      "description": "Folk-pop singer-songwriter met een intieme stem en akoestische arrangementen (o.a. 'Home'). Zijn oprechte verhalen raken het publiek op het akoestische podium.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Eefje de Visser",
+      "description": "Indiepop-artiest met dromerige, elektronisch getinte nummers. Haar hypnotiserende zang en rijke productie (zoals op 'Ongeveer') creëren een magische sfeer.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Froukje",
+      "description": "Doorbraak-popzangeres Froukje Veenstra combineert eerlijke teksten met pakkende, synth-gedreven hooks. Sinds haar debuut in 2021 is ze een stem van haar generatie.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Spinvis",
+      "description": "Erik de Jong maakt als Spinvis poëtische, collage-achtige liedjes met gesproken woord, lo-fi elektronica en melancholische pop. Zijn optredens zijn intiem en dromerig.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Talent set 1",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Talent set 2",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Talent set 3",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Talent set 4",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Talent set 5",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Talent set 6",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Talent set 7",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Talent set 1",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Talent set 2",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Talent set 3",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Talent set 4",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Talent set 5",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Talent set 6",
+      "description": "Opkomende artiesten laten nieuwe geluiden horen.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Comedy",
+      "description": "Stand-up comedians zorgen voor een lach op je gezicht.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Comedy",
+      "description": "Stand-up comedians zorgen voor een lach op je gezicht.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Lecture",
+      "description": "Inspirerende en leerzame talks door denkers en doeners.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Lecture",
+      "description": "Inspirerende en leerzame talks door denkers en doeners.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Theater",
+      "description": "Pakkende theatervoorstellingen voor jong en oud.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Theater",
+      "description": "Pakkende theatervoorstellingen voor jong en oud.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Movie",
+      "description": "Kom tot rust en geniet van een zorgvuldig gekozen film.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Movie",
+      "description": "Kom tot rust en geniet van een zorgvuldig gekozen film.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Performance",
+      "description": "Live podiumoptreden met dans en drama.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "Magic Show",
+      "description": "Een verbluffende show vol magie en illusie.",
+      "day": "Zondag"
+    },
+    {
+      "name": "Illusionist",
+      "description": "Ongelooflijke illusies en vingervlugge trucs.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "DJ set 1",
+      "description": "Elektronische beats om de dag te starten.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "DJ set 2",
+      "description": "Elektronische beats om de dag te starten.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "DJ set 3",
+      "description": "Elektronische beats om de dag te starten.",
+      "day": "Zondag"
+    },
+    {
+      "name": "DJ set 4",
+      "description": "Energieke set om het publiek in beweging te houden.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "DJ set 4",
+      "description": "Energieke set om het publiek in beweging te houden.",
+      "day": "Zondag"
+    },
+    {
+      "name": "DJ set 5",
+      "description": "De feeststemming stijgt in de avonduren.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "DJ set 5",
+      "description": "De feeststemming stijgt in de avonduren.",
+      "day": "Zondag"
+    },
+    {
+      "name": "DJ set 6",
+      "description": "Pompende house- en technobeats.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "DJ set 6",
+      "description": "Pompende house- en technobeats.",
+      "day": "Zondag"
+    },
+    {
+      "name": "DJ set 7",
+      "description": "Late-night grooves voor de echte dansers.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "DJ set 7",
+      "description": "Late-night grooves voor de echte dansers.",
+      "day": "Zondag"
+    },
+    {
+      "name": "DJ set 8",
+      "description": "Festivalfinale met knallende elektronische vibes.",
+      "day": "Zaterdag"
+    },
+    {
+      "name": "DJ set 8",
+      "description": "Festivalfinale met knallende elektronische vibes.",
+      "day": "Zondag"
+    }
+  ]
 }

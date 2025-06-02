@@ -1,10 +1,23 @@
 import { useState, useEffect, useRef } from "react";
 import events from "../data/Events.json";
+import en from "../locales/en.json";
+import nl from "../locales/nl.json";
 import { Music, Star, Users, Calendar, PartyPopper, X } from "lucide-react";
 
-const STAGES = Array.from(
-  new Set(events.filter((e) => e.stage).map((e) => e.stage))
-);
+function getTranslations(language) {
+  return language === "nl" ? nl : en;
+}
+
+function mergeEventData(events, eventsData) {
+  return events.map((event) => {
+    const match = eventsData.find((e) => e.name === event.name);
+    return {
+      ...event,
+      description: match?.description || "",
+      day: match?.day || "",
+    };
+  });
+}
 
 const getDay = (event) => {
   if (event.day) return event.day;
@@ -33,13 +46,20 @@ function getEventIcon(event) {
   return <PartyPopper className="h-5 w-5 mr-1" />;
 }
 
-export default function EventBlock() {
-  const [day, setDay] = useState("Saturday");
+export default function EventBlock({ language = "en" }) {
+  const t = getTranslations(language);
+  const mergedEvents = mergeEventData(events, t.eventsData);
+
+  const [day, setDay] = useState(t.events.days.saturday);
   const timelineWidth = 3000;
   const slots = Math.round((DAY_END - DAY_START) / 30) + 1;
   const [showSlots, setShowSlots] = useState(Array(slots).fill(false));
   const [selectedEvent, setSelectedEvent] = useState(null);
   const timelineRef = useRef();
+
+  const STAGES = Array.from(
+    new Set(mergedEvents.filter((e) => e.stage).map((e) => e.stage))
+  );
 
   useEffect(() => {
     setShowSlots(Array(slots).fill(false));
@@ -63,8 +83,19 @@ export default function EventBlock() {
     return () => window.removeEventListener("keydown", onKey);
   }, [selectedEvent]);
 
-  const dayEvents = events
-    .filter((e) => getDay(e) === day && e.stage && e.time)
+  const dayKey = Object.keys(t.events.days).find(
+    (k) => t.events.days[k] === day
+  ) || "saturday";
+
+  const dayEvents = mergedEvents
+    .filter((e) => {
+      const eventDayKey = (e.day || getDay(e)).toLowerCase();
+      return (
+        eventDayKey === dayKey ||
+        eventDayKey === t.events.days[dayKey].toLowerCase()
+      );
+    })
+    .filter((e) => e.stage && e.time)
     .map((e) => ({
       ...e,
       timeRange: parseTime(e.time),
@@ -72,9 +103,11 @@ export default function EventBlock() {
 
   return (
     <div className="p-6 text-black dark:text-white max-w-full">
-      <h2 className="text-3xl font-bold mb-4 uppercase text-red-600 dark:text-red-400">Events</h2>
+      <h2 className="text-3xl font-bold mb-4 uppercase text-red-600 dark:text-red-400">
+        {t.events.title}
+      </h2>
       <div className="mb-6 flex gap-2">
-        {["Saturday", "Sunday"].map((d) => (
+        {Object.values(t.events.days).map((d) => (
           <button
             key={d}
             onClick={() => setDay(d)}
@@ -233,10 +266,13 @@ export default function EventBlock() {
                   </div>
                 </div>
                 <div className="mb-2">
-                  <span className="font-semibold">Stage:</span> {selectedEvent.stage}
+                  <span className="font-semibold">{t.events.modal.stage}</span> {selectedEvent.stage}
                 </div>
                 <div className="mb-2">
-                  <span className="font-semibold">Time:</span> {selectedEvent.time}
+                  <span className="font-semibold">{t.events.modal.time}</span> {selectedEvent.time}
+                </div>
+                <div className="mb-2">
+                  <span className="font-semibold">{t.events.days[selectedEvent.day?.toLowerCase()] || selectedEvent.day}</span>
                 </div>
                 {selectedEvent.description && (
                   <div className="mb-2">{selectedEvent.description}</div>

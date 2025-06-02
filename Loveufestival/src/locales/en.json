@@ -1,26 +1,383 @@
 {
-  "": {
-    "title": "Section Title",
-    "info": "This is some information about this section."
+  "navbar": {
+    "searchPlaceholder": "Search in LoveUfestival...",
+    "toggleDarkMode": "Toggle Dark Mode",
+    "language": "EN"
   },
-  "profile": {
-    "title": "Profile",
-    "info": "Manage your personal information here."
+  "footer": {
+    "home": "Home",
+    "map": "Map",
+    "events": "Events",
+    "info": "Info"
   },
-  "settings": {
-    "title": "Settings",
-    "info": "Adjust your preferences and configurations."
+  "home": {
+    "welcome": "Welcome to LoveUfestival!",
+    "notifications": "Notifications",
+    "noNotifications": "No notifications.",
+    "newsletter": "Newsletter",
+    "newsletterTitle": "Festival Update: New Artists Announced!",
+    "newsletterDescription": "Check out the latest additions to our lineup and what to expect this year.",
+    "newsletterFullText": "We are thrilled to announce several new artists joining LoveUfestival 2025! Stay tuned for more updates and exclusive interviews with the performers. Don't miss out on the fun and excitement!"
   },
-  "notifications": {
-    "title": "Notifications",
-    "info": "View your recent notifications and alerts."
+  "more": {
+    "festivalInformation": "Festival Information",
+    "sections": {
+      "generalContact": {
+        "title": "General & Contact",
+        "content": {
+          "description": "The ❤️U Festival is for (new) students in the Utrecht region and complements UIT.",
+          "location": "Location:",
+          "locationValue": "Strijkviertel, Utrecht",
+          "navigationAddress": "Navigation address:",
+          "navigationAddressValue": "Strijkviertelweg, Utrecht",
+          "date": "Date:",
+          "dateValue": "Saturday, September 6, 2025",
+          "time": "Time:",
+          "timeValue": "12:00 - 23:00"
+        }
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "content": {
+          "bike": "Bike:",
+          "bikeValue": "Free bike parking available.",
+          "car": "Car:",
+          "carValue": "Parking at P+R Papendorp with online ticket or on-site (PIN ONLY, FIRST COME FIRST SERVED).",
+          "publicTransport": "Public Transport:",
+          "publicTransportValue": "Plan your trip via 9292.nl.",
+          "shuttleBus": "Shuttle Bus:",
+          "shuttleBusValue": "Free from Utrecht Central between 12:00–19:00 (going) and from 21:00 (return).",
+          "taxi": "Taxi & Kiss & Ride:",
+          "taxiValue": "Follow the signs at Strijkviertel, De Meern."
+        }
+      },
+      "lockers": {
+        "title": "Lockers",
+        "content": {
+          "lockersAvailable": "Lockers are available at the festival. Suitable for 3 to 4 coats.",
+          "unlimitedAccess": "You can open and close your locker unlimited times.",
+          "noOnlineReservation": "Note: You cannot reserve lockers online."
+        }
+      },
+      "faq": {
+        "title": "FAQ",
+        "content": {
+          "medication": "Medication:",
+          "medicationValue": "Allowed with a doctor's note. May be kept in custody at the first aid station.",
+          "leaving": "Leaving temporarily:",
+          "leavingValue": "Not allowed due to safety. Please enjoy the festival area!",
+          "lockers": "Lockers:",
+          "lockersValue": "Medium and large lockers available."
+        }
+      },
+      "goldenGlu": {
+        "title": "Golden GLU",
+        "content": {
+          "description": "GLU students have special privileges thanks to their golden wristband:",
+          "toilet": "Access to golden toilets",
+          "fastService": "Fast service at marked bars"
+        }
+      }
+    }
   },
-  "help": {
-    "title": "Help",
-    "info": "Find answers to common questions."
+  "map": {
+    "bar": {
+      "title": "Bar",
+      "drinks": "Drinks available:"
+    },
+    "food": {
+      "title": "Food",
+      "foods": "Food options:"
+    },
+    "iceCream": {
+      "title": "Ice Cream",
+      "flavors": "Flavors available:"
+    },
+    "toilet": {
+      "title": "Toilet",
+      "desc": "Restrooms are available here for your convenience."
+    },
+    "entranceExit": {
+      "title": "Entrance / Exit",
+      "desc": "This is the main entrance and exit of the festival grounds."
+    },
+    "firstAid": {
+      "title": "First Aid",
+      "desc": "Need help? Visit the first aid station for medical assistance."
+    },
+    "locker": {
+      "title": "Locker",
+      "desc": "Store your belongings safely in a locker."
+    },
+    "merchandise": {
+      "title": "Merchandise",
+      "desc": "Get your official festival merchandise here!"
+    },
+    "stage": {
+      "clickForFullLineup": "Click for full line-up in the Events tab!",
+      "noArtistInfo": "No artist info available."
+    }
   },
-  "about": {
-    "title": "About",
-    "info": "Learn more about this application."
-  }
+  "events": {
+    "title": "Events",
+    "days": {
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "stages": [
+    ],
+    "eventTypes": {
+      "dj": "DJ Set",
+      "special": "Special",
+      "workshop": "Workshop",
+      "meeting": "Meeting",
+      "default": "Event"
+    },
+    "modal": {
+      "stage": "Stage:",
+      "time": "Time:"
+    }
+  },
+  "eventsData": [
+    {
+      "name": "Armin van Buuren",
+      "description": "Five-time “World’s No. 1 DJ” and trance icon, Armin delivers euphoric, high-energy sets that have headlined festivals from Tomorrowland to Ultra. His uplifting melodies and impeccable mixing keep crowds dancing for hours.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Martin Garrix",
+      "description": "Broke through as a teenager with “Animals,” Martin Garrix has become one of the biggest names in EDM. His anthemic big-room tracks and stadium-sized drops make him a festival favorite across Europe.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Kensington",
+      "description": "Rotterdam-born indie rock quintet known for soaring choruses and driving guitar riffs. Hits like “Streets” and “Riddles” showcase their knack for arena-ready hooks and emotionally charged lyricism.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Within Temptation",
+      "description": "Symphonic metal pioneers fronted by Sharon den Adel. Their cinematic soundscapes and operatic vocals (think “Ice Queen,” “Mother Earth”) translate into dramatic, visually stunning festival performances.",
+      "day": "Sunday"
+    },
+    {
+      "name": "De Staat",
+      "description": "Experimental rock outfit from Nijmegen, blending funky grooves with angular guitar work and theatrical stagecraft. Tracks like “Witch Doctor” and “Down Town” highlight their genre-bending approach and infectious energy.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Chef’Special",
+      "description": "A four-piece from Haarlem mixing funk, pop, rock and hip-hop. Their upbeat, genre-fluid sound on songs like “Amigo” and “In Your Arms” makes for joyous, dance-floor-friendly live shows.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Navarone",
+      "description": "Utrecht’s hard-hitting rock four-piece, delivering riff-driven anthems and dynamic vocals. With a live reputation for raw intensity, they’re tailor-made for late-night main stages.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Dotan",
+      "description": "Folk-pop singer-songwriter whose intimate voice and acoustic arrangements (notably on “Home”) have earned him platinum sales and sell-out shows. His heartfelt storytelling connects deeply on festival acoustic stages.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Eefje de Visser",
+      "description": "Indie-pop artist crafting atmospheric, electronic-tinged songs. Her hypnotic vocals and lush production (as heard on “Ongeveer”) create a dreamlike vibe perfect for twilight festival slots.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Froukje",
+      "description": "Breakthrough pop singer Froukje Veenstra combines candid lyrics with catchy, synth-driven hooks. Since her 2021 debut, she’s become a voice of her generation—ideal for mid-day festival stages.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Spinvis",
+      "description": "Erik de Jong performs under the moniker Spinvis, crafting poetic, collage-like songs that blend spoken-word snippets, lo-fi electronics and wistful pop. Since his debut album in 2002—recorded in his attic—he’s become a fixture of Dutch indie, renowned for narratives that feel both intimate and surreal. His live shows turn everyday observations into shared, dreamlike experiences.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Talent set 1",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Talent set 2",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Talent set 3",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Talent set 4",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Talent set 5",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Talent set 6",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Talent set 7",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Talent set 1",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Talent set 2",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Talent set 3",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Talent set 4",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Talent set 5",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Talent set 6",
+      "description": "Emerging artists showcasing new sounds.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Comedy",
+      "description": "Stand-up comedy acts to keep the laughs rolling.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Comedy",
+      "description": "Stand-up comedy acts to keep the laughs rolling.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Lecture",
+      "description": "Inspiring and educational talks by thought leaders.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Lecture",
+      "description": "Inspiring and educational talks by thought leaders.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Theater",
+      "description": "Engaging theatrical performances for all ages.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Theater",
+      "description": "Engaging theatrical performances for all ages.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Movie",
+      "description": "Relax and enjoy a curated indie film experience.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Movie",
+      "description": "Relax and enjoy a curated indie film experience.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Performance",
+      "description": "Live stage performance with dance and drama elements.",
+      "day": "Saturday"
+    },
+    {
+      "name": "Magic Show",
+      "description": "A jaw-dropping magic and illusion performance.",
+      "day": "Sunday"
+    },
+    {
+      "name": "Illusionist",
+      "description": "Mind-bending illusions and sleight-of-hand wizardry.",
+      "day": "Saturday"
+    },
+    {
+      "name": "DJ set 1",
+      "description": "Electronic beats to kick off the day.",
+      "day": "Saturday"
+    },
+    {
+      "name": "DJ set 2",
+      "description": "Electronic beats to kick off the day.",
+      "day": "Saturday"
+    },
+    {
+      "name": "DJ set 3",
+      "description": "Electronic beats to kick off the day.",
+      "day": "Sunday"
+    },
+    {
+      "name": "DJ set 4",
+      "description": "High-energy set to keep the crowd moving.",
+      "day": "Saturday"
+    },
+    {
+      "name": "DJ set 4",
+      "description": "High-energy set to keep the crowd moving.",
+      "day": "Sunday"
+    },
+    {
+      "name": "DJ set 5",
+      "description": "Party vibes intensify with the evening crowd.",
+      "day": "Saturday"
+    },
+    {
+      "name": "DJ set 5",
+      "description": "Party vibes intensify with the evening crowd.",
+      "day": "Sunday"
+    },
+    {
+      "name": "DJ set 6",
+      "description": "Pulsing house and techno beats.",
+      "day": "Saturday"
+    },
+    {
+      "name": "DJ set 6",
+      "description": "Pulsing house and techno beats.",
+      "day": "Sunday"
+    },
+    {
+      "name": "DJ set 7",
+      "description": "Late-night grooves for the die-hard dancers.",
+      "day": "Saturday"
+    },
+    {
+      "name": "DJ set 7",
+      "description": "Late-night grooves for the die-hard dancers.",
+      "day": "Sunday"
+    },
+    {
+      "name": "DJ set 8",
+      "description": "Festival finale with thumping electronic vibes.",
+      "day": "Saturday"
+    },
+    {
+      "name": "DJ set 8",
+      "description": "Festival finale with thumping electronic vibes.",
+      "day": "Sunday"
+    }
+  ]
 }
