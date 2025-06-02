@@ -70,10 +70,8 @@ const markers = [
   { id: "merchandise3", img: markerMerchandise, alt: "Merchandise", pos: [-0.22033, -78.5122] },
 ];
 
-// Helper to get translations for marker popups
 function getPopupContent(marker, t) {
   if (marker.stage) {
-    // Show artists for this stage
     const filtered = events
       .filter(
         (e) =>

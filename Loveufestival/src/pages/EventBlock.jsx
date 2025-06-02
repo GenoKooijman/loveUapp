@@ -8,13 +8,25 @@ function getTranslations(language) {
   return language === "nl" ? nl : en;
 }
 
+function normalizeDay(day) {
+  if (!day) return "";
+  const d = day.toLowerCase();
+  if (["saturday", "zaterdag"].includes(d)) return "saturday";
+  if (["sunday", "zondag"].includes(d)) return "sunday";
+  return d;
+}
+
 function mergeEventData(events, eventsData) {
   return events.map((event) => {
-    const match = eventsData.find((e) => e.name === event.name);
+    const match = eventsData.find(
+      (e) =>
+        e.name === event.name &&
+        normalizeDay(e.day) === normalizeDay(event.day || getDay(event))
+    );
     return {
       ...event,
       description: match?.description || "",
-      day: match?.day || "",
+      day: match?.day || event.day || getDay(event),
     };
   });
 }
@@ -46,11 +58,18 @@ function getEventIcon(event) {
   return <PartyPopper className="h-5 w-5 mr-1" />;
 }
 
+function getDayKey(day) {
+  const d = day?.toLowerCase();
+  if (d === "saturday" || d === "zaterdag") return "saturday";
+  if (d === "sunday" || d === "zondag") return "sunday";
+  return "saturday";
+}
+
 export default function EventBlock({ language = "en" }) {
   const t = getTranslations(language);
   const mergedEvents = mergeEventData(events, t.eventsData);
 
-  const [day, setDay] = useState(t.events.days.saturday);
+  const [dayKey, setDayKey] = useState("saturday");
   const timelineWidth = 3000;
   const slots = Math.round((DAY_END - DAY_START) / 30) + 1;
   const [showSlots, setShowSlots] = useState(Array(slots).fill(false));
@@ -74,7 +93,7 @@ export default function EventBlock({ language = "en" }) {
       if (i >= slots) clearInterval(interval);
     }, 30);
     return () => clearInterval(interval);
-  }, [day, slots]);
+  }, [dayKey, slots]);
 
   useEffect(() => {
     if (!selectedEvent) return;
@@ -83,17 +102,10 @@ export default function EventBlock({ language = "en" }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [selectedEvent]);
 
-  const dayKey = Object.keys(t.events.days).find(
-    (k) => t.events.days[k] === day
-  ) || "saturday";
-
   const dayEvents = mergedEvents
     .filter((e) => {
-      const eventDayKey = (e.day || getDay(e)).toLowerCase();
-      return (
-        eventDayKey === dayKey ||
-        eventDayKey === t.events.days[dayKey].toLowerCase()
-      );
+      const eventDayKey = getDayKey(e.day || getDay(e));
+      return eventDayKey === dayKey;
     })
     .filter((e) => e.stage && e.time)
     .map((e) => ({
@@ -107,17 +119,17 @@ export default function EventBlock({ language = "en" }) {
         {t.events.title}
       </h2>
       <div className="mb-6 flex gap-2">
-        {Object.values(t.events.days).map((d) => (
+        {Object.entries(t.events.days).map(([key, label]) => (
           <button
-            key={d}
-            onClick={() => setDay(d)}
+            key={key}
+            onClick={() => setDayKey(key)}
             className={`px-4 py-2 rounded-full font-semibold shadow-md transition-all duration-200 ${
-              day === d
+              dayKey === key
                 ? "bg-red-600 text-white dark:bg-red-700"
                 : "bg-gray-100 dark:bg-gray-800 text-sky-700 dark:text-sky-400 hover:bg-gray-200 dark:hover:bg-gray-700"
             }`}
           >
-            {d}
+            {label}
           </button>
         ))}
       </div>
@@ -127,7 +139,6 @@ export default function EventBlock({ language = "en" }) {
         ref={timelineRef}
         style={{ position: "relative" }}
       >
-        {/* Timeline Header */}
         <div
           className="relative"
           style={{ width: timelineWidth, height: 24, marginLeft: 112 }}
@@ -272,7 +283,7 @@ export default function EventBlock({ language = "en" }) {
                   <span className="font-semibold">{t.events.modal.time}</span> {selectedEvent.time}
                 </div>
                 <div className="mb-2">
-                  <span className="font-semibold">{t.events.days[selectedEvent.day?.toLowerCase()] || selectedEvent.day}</span>
+                  <span className="font-semibold">{t.events.days[getDayKey(selectedEvent.day)] || selectedEvent.day}</span>
                 </div>
                 {selectedEvent.description && (
                   <div className="mb-2">{selectedEvent.description}</div>
