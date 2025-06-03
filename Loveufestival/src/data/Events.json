@@ -6,7 +6,8 @@
     "video": "https://www.youtube.com/watch?v=TxvpctgU_s8",
     "time": "10:30–12:00",
     "stage": "Poton",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Trance"
   },
   {
     "name": "Martin Garrix",
@@ -15,7 +16,8 @@
     "video": "https://www.youtube.com/watch?v=Zv1QV6lrc_Y",
     "time": "11:00–13:00",
     "stage": "Poton",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "EDM"
   },
   {
     "name": "Kensington",
@@ -24,7 +26,8 @@
     "video": "https://www.youtube.com/watch?v=IH77eOyV95o",
     "time": "12:15–13:45",
     "stage": "Poton",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Indie Rock"
   },
   {
     "name": "Within Temptation",
@@ -33,7 +36,8 @@
     "video": "https://www.youtube.com/watch?v=iQVei5C2N4E",
     "time": "13:15–15:00",
     "stage": "Poton",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Symphonic Metal"
   },
   {
     "name": "De Staat",
@@ -42,7 +46,8 @@
     "video": "https://www.youtube.com/watch?v=0ttGgIQpAUc",
     "time": "14:00–15:30",
     "stage": "Poton",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Experimental Rock"
   },
   {
     "name": "Chef’Special",
@@ -51,7 +56,8 @@
     "video": "https://www.youtube.com/watch?v=l3jRIr44lss",
     "time": "15:15–17:00",
     "stage": "Poton",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Funk Pop"
   },
   {
     "name": "Navarone",
@@ -60,7 +66,8 @@
     "video": "https://www.youtube.com/watch?v=EvLpaCSnc4k",
     "time": "16:45–18:15",
     "stage": "Poton",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Rock"
   },
   {
     "name": "Dotan",
@@ -69,7 +76,8 @@
     "video": "https://www.youtube.com/watch?v=FZEuqzW16Nw",
     "time": "18:30–20:00",
     "stage": "Poton",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Folk Pop"
   },
   {
     "name": "Eefje de Visser",
@@ -78,7 +86,8 @@
     "video": "https://www.youtube.com/watch?v=6IlLJNmLDMg",
     "time": "19:00–20:30",
     "stage": "Poton",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Indie Pop"
   },
   {
     "name": "Froukje",
@@ -87,7 +96,8 @@
     "video": "https://www.youtube.com/watch?v=g4PlReX9e-E",
     "time": "20:15–21:45",
     "stage": "Poton",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Pop"
   },
   {
     "name": "Spinvis",
@@ -96,228 +106,266 @@
     "video": "https://www.youtube.com/watch?v=F3ZTrGWSLf4",
     "time": "21:00–22:30",
     "stage": "Poton",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Lo-fi Pop"
   },
   {
     "name": "Talent set 1",
     "stage": "The Lake",
     "time": "10:00–11:30",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Talent"
   },
   {
     "name": "Talent set 2",
     "stage": "The Lake",
     "time": "11:30–13:00",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Talent"
   },
   {
     "name": "Talent set 3",
     "stage": "The Lake",
     "time": "13:30–15:00",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Talent"
   },
   {
     "name": "Talent set 4",
     "stage": "The Lake",
     "time": "15:00–16:30",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Talent"
   },
   {
     "name": "Talent set 5",
     "stage": "The Lake",
     "time": "17:00–18:30",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Talent"
   },
   {
     "name": "Talent set 6",
     "stage": "The Lake",
     "time": "18:30–20:00",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Talent"
   },
   {
     "name": "Talent set 7",
     "stage": "The Lake",
     "time": "21:00–22:30",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Talent"
   },
   {
     "name": "Talent set 1",
     "stage": "The Lake",
     "time": "10:00–11:30",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Talent"
   },
   {
     "name": "Talent set 2",
     "stage": "The Lake",
     "time": "11:30–13:00",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Talent"
   },
   {
     "name": "Talent set 3",
     "stage": "The Lake",
     "time": "13:30–15:00",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Talent"
   },
   {
     "name": "Talent set 4",
     "stage": "The Lake",
     "time": "15:00–16:30",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Talent"
   },
   {
     "name": "Talent set 5",
     "stage": "The Lake",
     "time": "17:00–18:30",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Talent"
   },
   {
     "name": "Talent set 6",
     "stage": "The Lake",
     "time": "18:30–20:30",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Talent"
   },
   {
     "name": "Comedy",
     "stage": "The Club",
     "time": "11:30–13:30",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Comedy"
   },
   {
     "name": "Comedy",
     "stage": "The Club",
     "time": "11:30–13:30",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Comedy"
   },
   {
     "name": "Lecture",
     "stage": "The Club",
     "time": "14:00–15:30",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Lecture"
   },
   {
     "name": "Lecture",
     "stage": "The Club",
     "time": "14:00–15:30",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Lecture"
   },
   {
     "name": "Theater",
     "stage": "The Club",
     "time": "15:30–17:00",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Theater"
   },
   {
     "name": "Theater",
     "stage": "The Club",
     "time": "15:30–17:00",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Theater"
   },
   {
     "name": "Movie",
     "stage": "The Club",
     "time": "17:30–19:00",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Movie"
   },
   {
     "name": "Movie",
     "stage": "The Club",
     "time": "17:30–19:00",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Movie"
   },
   {
     "name": "Performance",
     "stage": "The Club",
     "time": "19:00–20:30",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Performance"
   },
   {
     "name": "Magic Show",
     "stage": "The Club",
     "time": "20:00–21:30",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "Magic"
   },
   {
     "name": "Illusionist",
     "stage": "The Club",
     "time": "21:00–22:30",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "Magic"
   },
   {
     "name": "DJ set 1",
     "stage": "Hanggar",
     "time": "10:00–11:30",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "DJ"
   },
   {
     "name": "DJ set 2",
     "stage": "Hanggar",
     "time": "11:30–13:00",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "DJ"
   },
   {
     "name": "DJ set 3",
     "stage": "Hanggar",
     "time": "10:00–11:30",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "DJ"
   },
   {
     "name": "DJ set 4",
     "stage": "Hanggar",
     "time": "13:00–15:00",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "DJ"
   },
   {
     "name": "DJ set 4",
     "stage": "Hanggar",
     "time": "13:00–15:00",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "DJ"
   },
   {
     "name": "DJ set 5",
     "stage": "Hanggar",
     "time": "15:00–17:00",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "DJ"
   },
   {
     "name": "DJ set 5",
     "stage": "Hanggar",
     "time": "15:00–17:00",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "DJ"
   },
   {
     "name": "DJ set 6",
     "stage": "Hanggar",
     "time": "17:30–19:00",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "DJ"
   },
   {
     "name": "DJ set 6",
     "stage": "Hanggar",
     "time": "17:30–19:00",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "DJ"
   },
   {
     "name": "DJ set 7",
     "stage": "Hanggar",
     "time": "19:00–21:00",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "DJ"
   },
   {
     "name": "DJ set 7",
     "stage": "Hanggar",
     "time": "19:00–21:00",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "DJ"
   },
   {
     "name": "DJ set 8",
     "stage": "Hanggar",
     "time": "21:00–23:45",
-    "day": "Saturday"
+    "day": "Saturday",
+    "genre": "DJ"
   },
   {
     "name": "DJ set 8",
     "stage": "Hanggar",
     "time": "21:00–23:45",
-    "day": "Sunday"
+    "day": "Sunday",
+    "genre": "DJ"
   }
 ]

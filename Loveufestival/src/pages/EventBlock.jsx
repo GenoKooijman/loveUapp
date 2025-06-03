@@ -52,7 +52,8 @@ const TOTAL_MINUTES = DAY_END - DAY_START;
 function getEventIcon(event) {
   const lower = event.name?.toLowerCase();
   if (lower.includes("dj")) return <Music className="h-5 w-5 mr-1" />;
-  if (lower.includes("special")) return <Star className="h-5 w-5 mr-1 text-yellow-400" />;
+  if (lower.includes("special"))
+    return <Star className="h-5 w-5 mr-1 text-yellow-400" />;
   if (lower.includes("workshop")) return <Users className="h-5 w-5 mr-1" />;
   if (lower.includes("meeting")) return <Calendar className="h-5 w-5 mr-1" />;
   return <PartyPopper className="h-5 w-5 mr-1" />;
@@ -68,8 +69,10 @@ function getDayKey(day) {
 export default function EventBlock({ language = "en" }) {
   const t = getTranslations(language);
   const mergedEvents = mergeEventData(events, t.eventsData);
+  const [showGenres, setShowGenres] = useState(false);
 
   const [dayKey, setDayKey] = useState("saturday");
+  const [genre, setGenre] = useState("all");
   const timelineWidth = 3000;
   const slots = Math.round((DAY_END - DAY_START) / 30) + 1;
   const [showSlots, setShowSlots] = useState(Array(slots).fill(false));
@@ -79,6 +82,13 @@ export default function EventBlock({ language = "en" }) {
   const STAGES = Array.from(
     new Set(mergedEvents.filter((e) => e.stage).map((e) => e.stage))
   );
+
+  const GENRES = [
+    "all",
+    ...Array.from(
+      new Set(mergedEvents.filter((e) => e.genre).map((e) => e.genre))
+    ),
+  ];
 
   useEffect(() => {
     setShowSlots(Array(slots).fill(false));
@@ -93,7 +103,7 @@ export default function EventBlock({ language = "en" }) {
       if (i >= slots) clearInterval(interval);
     }, 30);
     return () => clearInterval(interval);
-  }, [dayKey, slots]);
+  }, [dayKey, slots, genre]);
 
   useEffect(() => {
     if (!selectedEvent) return;
@@ -108,6 +118,7 @@ export default function EventBlock({ language = "en" }) {
       return eventDayKey === dayKey;
     })
     .filter((e) => e.stage && e.time)
+    .filter((e) => genre === "all" || e.genre === genre)
     .map((e) => ({
       ...e,
       timeRange: parseTime(e.time),
@@ -118,7 +129,7 @@ export default function EventBlock({ language = "en" }) {
       <h2 className="text-3xl font-bold mb-4 uppercase text-red-600 dark:text-red-400">
         {t.events.title}
       </h2>
-      <div className="mb-6 flex gap-2">
+      <div className="mb-6 flex gap-2 flex-wrap">
         {Object.entries(t.events.days).map(([key, label]) => (
           <button
             key={key}
@@ -132,6 +143,31 @@ export default function EventBlock({ language = "en" }) {
             {label}
           </button>
         ))}
+        <button
+          className="px-4 py-2 rounded-full font-semibold shadow-md transition-all duration-200 bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-sky-300 ml-4"
+          onClick={() => setShowGenres((v) => !v)}
+        >
+          {showGenres ? "Hide genres" : "Show genres"}
+        </button>
+        {showGenres && (
+          <div className="flex flex-wrap gap-2 ml-4">
+            {GENRES.map((g) => (
+              <button
+                key={g}
+                onClick={() => setGenre(g)}
+                className={`px-4 py-2 rounded-full font-semibold shadow-md transition-all duration-200
+        ${
+          genre === g
+            ? "bg-red-600 text-white dark:bg-red-700"
+            : "bg-gray-100 dark:bg-gray-800 text-sky-700 dark:text-sky-400 hover:bg-gray-200 dark:hover:bg-gray-700"
+        }`}
+                style={{ minWidth: 90 }}
+              >
+                {g === "all" ? "All genres" : g}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       <div
@@ -269,21 +305,34 @@ export default function EventBlock({ language = "en" }) {
                   <div>
                     <div className="flex items-center gap-2">
                       {getEventIcon(selectedEvent)}
-                      <span className="font-bold text-lg">{selectedEvent.name}</span>
+                      <span className="font-bold text-lg">
+                        {selectedEvent.name}
+                      </span>
                     </div>
                     {selectedEvent.shortDescription && (
-                      <div className="text-sm text-gray-500 dark:text-gray-300">{selectedEvent.shortDescription}</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-300">
+                        {selectedEvent.shortDescription}
+                      </div>
                     )}
                   </div>
                 </div>
                 <div className="mb-2">
-                  <span className="font-semibold">{t.events.modal.stage}</span> {selectedEvent.stage}
+                  <span className="font-semibold">{t.events.modal.stage}</span>{" "}
+                  {selectedEvent.stage}
                 </div>
                 <div className="mb-2">
-                  <span className="font-semibold">{t.events.modal.time}</span> {selectedEvent.time}
+                  <span className="font-semibold">{t.events.modal.time}</span>{" "}
+                  {selectedEvent.time}
                 </div>
                 <div className="mb-2">
-                  <span className="font-semibold">{t.events.days[getDayKey(selectedEvent.day)] || selectedEvent.day}</span>
+                  <span className="font-semibold">
+                    {t.events.days[getDayKey(selectedEvent.day)] ||
+                      selectedEvent.day}
+                  </span>
+                </div>
+                <div className="mb-2">
+                  <span className="font-semibold">Genre:</span>{" "}
+                  {selectedEvent.genre}
                 </div>
                 {selectedEvent.description && (
                   <div className="mb-2">{selectedEvent.description}</div>
@@ -310,4 +359,3 @@ export default function EventBlock({ language = "en" }) {
     </div>
   );
 }
-

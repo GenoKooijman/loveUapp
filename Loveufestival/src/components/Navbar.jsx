@@ -13,12 +13,14 @@ export default function Navbar({ theme, setTheme, language, setLanguage, modalOp
 
   return (
     <div className="bg-white dark:bg-gray-900 px-4 py-2 shadow-md flex items-center justify-between">
+      <a href="/homeView">
       <img
         src={theme === "dark" ? logoWhite : logoBlack}
         alt="LoveUfestival Logo"
         className="h-8 w-auto mr-4"
-        style={{ minWidth: 32 }}
+        style={{ minWidth: 32 }}  
       />
+      </a>
       <div className="flex items-center">
         <button
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
