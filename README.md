@@ -86,14 +86,6 @@ loveUFestivalApp/
 └── vite.config.js
 ```
 
-## Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[MIT](LICENSE) (or specify your license here)
-
 ---
 
 Made with ❤️ for the Utrecht student community.
