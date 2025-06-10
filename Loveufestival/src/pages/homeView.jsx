@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import logoBlack from "@/assets/logo_black.svg";
 import logoWhite from "@/assets/logo_white.svg";
-import eventsData from "../data/events.json";
-import en from "../locales/en.json";
-import nl from "../locales/nl.json";
+import eventsData from "@/data/events.json";
+import en from "@/locales/en.json";
+import nl from "@/locales/nl.json";
 
 function getEventStartDate(event) {
   let day, time;
