@@ -1,8 +1,8 @@
-import logoBlack from "../assets/logo_black.svg";
-import logoWhite from "../assets/logo_white.svg";
+import logoBlack from "@/assets/logo_black.svg";
+import logoWhite from "@/assets/logo_white.svg";
 import { useState } from "react";
-import en from "../locales/en.json";
-import nl from "../locales/nl.json";
+import en from "@/locales/en.json";
+import nl from "@/locales/nl.json";
 import {
   Info,
   MapPin,

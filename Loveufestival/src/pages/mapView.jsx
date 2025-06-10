@@ -14,9 +14,9 @@ import markerFood from "../assets/marker_food.svg";
 import markerIceCream from "../assets/marker_ice_cream.svg";
 import markerLocker from "../assets/marker_locker.svg";
 import markerMerchandise from "../assets/marker_merchandise.svg";
-import events from "../data/events.json";
-import en from "../locales/en.json";
-import nl from "../locales/nl.json";
+import events from "@/data/events.json";
+import en from "@/locales/en.json";
+import nl from "@/locales/nl.json";
 
 function getLocale(language) {
   return language === "nl" ? nl : en;
