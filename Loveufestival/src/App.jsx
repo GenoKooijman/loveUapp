@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 const HomeView = lazy(() => import("./pages/homeView"));
-const MapView = lazy(() => import("./pages/MapView"));
+const MapView = lazy(() => import("./pages/mapView"));
 const MoreView = lazy(() => import("./pages/MoreView"));
 const EventsView = lazy(() => import("./pages/EventsView"));
 
