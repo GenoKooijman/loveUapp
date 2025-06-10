@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import events from "@/data/Events.json";
+import events from "@/data/events.json";
 import en from "@/locales/en.json";
 import nl from "@/locales/nl.json";
 import { Music, Star, Users, Calendar, PartyPopper, X } from "lucide-react";
