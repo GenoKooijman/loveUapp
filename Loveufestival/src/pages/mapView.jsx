@@ -22,7 +22,6 @@ function getLocale(language) {
   return language === "nl" ? nl : en;
 }
 
-// Hide the attribution control (Leaflet link)
 function HideAttribution() {
   const map = useMap();
   map.attributionControl.remove();
