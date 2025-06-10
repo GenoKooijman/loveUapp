@@ -25,10 +25,24 @@ export default defineConfig({
       short_name: 'loveUfestival',
       description: 'loveUfestival',
       theme_color: '#ffffff',
+      icons: [
+        {
+          src: 'pwa-192x192.png',
+          sizes: '192x192',
+          type: 'image/png'
+        },
+        {
+          src: 'pwa-512x512.png',
+          sizes: '512x512',
+          type: 'image/png'
+        }
+      ]
     },
 
     workbox: {
-      globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
+      globPatterns: [
+        '**/*.{js,css,html,svg,png,ico,jpg,jpeg,gif,webp,woff,woff2,ttf,eot,mp3,mp4,webm,ogg}'
+      ],
       cleanupOutdatedCaches: true,
       clientsClaim: true,
     },
