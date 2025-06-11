@@ -188,7 +188,7 @@ export default function MoreView({ theme, language = "en" }) {
           >
             <button
               onClick={() => toggleSection(idx)}
-              className="w-full flex items-center justify-between px-4 py-3 text-left text-lg font-semibold text-[var(--color-secondary)] dark:text-sky-400 hover:bg-[var(--color-accent)] hover:text-white dark:hover:bg-sky-600 transition-colors rounded-xl"
+              className="w-full flex items-center justify-between px-4 py-3 text-left text-lg font-semibold text-[var(--color-secondary)] dark:text-sky-400 rounded-xl"
             >
               <div className="flex items-center">
                 {ICONS[key]}
